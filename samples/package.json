@@ -1,6 +1,8 @@
 {
   "name": "nodejs-docs-samples-logging-bunyan",
-  "files": ["*.js"],
+  "files": [
+    "*.js"
+  ],
   "private": true,
   "license": "Apache-2.0",
   "author": "Google Inc.",
@@ -23,6 +25,7 @@
     "ava": "^0.25.0",
     "delay": "^4.0.0",
     "execa": "^1.0.0",
-    "got": "^9.0.0"
+    "got": "^9.0.0",
+    "server-destroy": "^1.0.1"
   }
 }

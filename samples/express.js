@@ -18,6 +18,7 @@
 // [START logging_bunyan_express]
 // Imports the Google Cloud client library for Bunyan.
 const lb = require('@google-cloud/logging-bunyan');
+const enableDestroy = require('server-destroy');
 
 // Import express module and create an http server.
 const express = require('express');
@@ -51,10 +52,11 @@ async function startServer() {
   const server = app.listen(8080, () => {
     console.log('http server listening on port 8080');
   });
+  enableDestroy(server);
 
   app.get('/shutdown', (req, res) => {
     res.sendStatus(200);
-    server.close();
+    server.destroy();
   });
 }
 
